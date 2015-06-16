@@ -1,17 +1,17 @@
-<form method="post" class="website_form">
+<form method="POST" class="website_form">
     <div>
         <label for="title">Title</label>
-        <input type="text" name="" value="">
+        <input type="text" name="title" value="">
     </div>
     
     <div>
         <label for="url">URL</label>
-        <input type="text" name="" value="">
+        <input type="text" name="url" value="">
     </div>
     
     <div>
         <label for="description">Description</label>
-        <textarea type="text" name="" value=""></textarea>
+        <textarea type="text" name="description" value=""></textarea>
     </div>
     
     <div>
