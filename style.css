@@ -1,0 +1,9 @@
+.container {
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+.website-list {
+    border: 2px solid;
+    border-radius: 5px;
+}
