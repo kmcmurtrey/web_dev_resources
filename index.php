@@ -28,6 +28,7 @@ $websites = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <a href="<?php echo $website['url'] ?>"><?php echo $website['title'] ?></a>
                         <p>Description: <?php echo $website['description'] ?></p>
                         <a href="edit.php?id=<?php echo $website['id'] ?>">Edit</a>
+                        <a href="delete.php?id=<?php echo $website['id'] ?>">Delete</a>
                     </li>
                 <?php endforeach; ?>
             </ol>
