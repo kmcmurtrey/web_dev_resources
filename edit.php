@@ -25,7 +25,6 @@ if (!isset($_POST['save_website'])) {
         echo $e->getMessage();
         die();
     }
-
 }
 
 //if the form was submitted (after editing), prepare query to update website's info in database
