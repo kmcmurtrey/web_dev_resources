@@ -1,9 +1,35 @@
+p {
+    margin: .5em 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.website-title {
+    text-decoration: underline;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
 .container {
     max-width: 700px;
     margin: 20px auto;
 }
 
+.container h1 {
+    text-align: center;
+}
+
 .website-list {
     border: 2px solid;
     border-radius: 5px;
+}
+
+.website-list li {
+    margin-bottom: 1em;
+}
+
+.button {
+
 }

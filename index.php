@@ -25,16 +25,16 @@ $websites = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <?php foreach( $websites as $website ) : ?>
                     <li>
                         <!-- output: <a href="__URL__">__TITLE__</a> -->
-                        <a href="<?php echo $website['url'] ?>"><?php echo $website['title'] ?></a>
+                        <a href="<?php echo $website['url'] ?>" class="website-title"><?php echo $website['title'] ?></a>
                         <p>Description: <?php echo $website['description'] ?></p>
-                        <a href="edit.php?id=<?php echo $website['id'] ?>">Edit</a>
-                        <a href="delete.php?id=<?php echo $website['id'] ?>">Delete</a>
+                        <a href="edit.php?id=<?php echo $website['id'] ?>" class="button">Edit</a>
+                        <a href="delete.php?id=<?php echo $website['id'] ?>" class="button">Delete</a>
                     </li>
                 <?php endforeach; ?>
             </ol>
         </div>
+        <a href="new.php" class="button">New Website</a>
     </div>
 
-<a href="new.php">New Website</a>
 </body>
 </html>
