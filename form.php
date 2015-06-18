@@ -1,4 +1,4 @@
-<form method="POST" class="website_form">
+<form method="POST" class="website_form" action="new.php">
     <div>
         <label for="title">Title</label>
         <input type="text" name="title" value="">

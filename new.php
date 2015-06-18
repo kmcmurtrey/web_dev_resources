@@ -2,13 +2,35 @@
 
 include 'global.php';
 
-$title = $_POST['title'];
-$url = $_POST['url'];
-$description = $_POST['description'];
-
+// check if the form was submitted
 if (isset($_POST['save_website'])) {
-//    $website = $_POST['website[]'];
-    echo $title, $url, $description;
+
+    //define input variables sent via POST
+    $url = $_POST['url'];
+    $title = $_POST['title'];
+    $description = $_POST['description'];
+
+    //prepare SQL query
+    try {
+        $stmt = $dbh->prepare("INSERT INTO websites (url, title, description) VALUES (:url, :title, :description)");
+
+        //run the SQL query
+        if ($stmt->execute(array(
+            'url' => $url,
+            'title' => $title,
+            'description' => $description
+            ))
+        ) {
+            //go back to index.php
+            header('Location: index.php');
+        } else {
+            //display an error if failed
+            echo "Failed to add website";
+        }
+    } catch (Exception $e) {
+        echo $e->getMessage();
+        die();
+    }
 }
 
 ?>
