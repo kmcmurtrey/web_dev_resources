@@ -32,6 +32,18 @@ $websites = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </li>
                 <?php endforeach; ?>
             </ol>
+        </div><!--
+
+        --><div class="sidebar">
+            <h2>Category</h2>
+
+            <ol>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>PHP</li>
+                <li>General</li>
+            </ol>
         </div>
         <a href="new.php" class="button">New Website</a>
     </div>
