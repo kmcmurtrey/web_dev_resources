@@ -5,3 +5,7 @@ try {
     echo $e->getMessage();
     die;
 }
+
+$stmt_category = $dbh->query("SELECT DISTINCT category FROM websites ORDER BY category");
+
+$categories = $stmt_category->fetchAll(PDO::FETCH_ASSOC);
