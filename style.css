@@ -51,6 +51,42 @@ a {
     margin-bottom: 1em;
 }
 
-.button {
+fieldset {
+    width: 720px;
+    margin: 0 auto;
+}
 
+legend {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+label {
+    width: 100px;
+    font-weight: bold;
+    text-align: right;
+    float: left;
+}
+
+input {
+    width: 500px;
+    float: left;
+}
+
+select {
+    width: 100px;
+}
+
+input, textarea, select {
+    margin: 5px;
+}
+
+textarea {
+    width: 500px;
+    height: 200px;
+}
+
+input[type="submit"] {
+    margin-left: 105px;
+    width: 100px;
 }
