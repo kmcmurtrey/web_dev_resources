@@ -12,7 +12,7 @@ include 'global.php';
 <body>
     <div class="container">
     
-        <h1>Web Development Resources</h1>
+        <h1><a href="index.php">Web Development Resources</a></h1>
 
         <div class="website-list">
             <ol>
