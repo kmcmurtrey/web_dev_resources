@@ -1,11 +1,6 @@
 <?php
 include 'global.php';
 
-$stmt = $dbh->query("SELECT * FROM websites");
-
-$websites = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//var_dump($websites);
-//die();
 ?>
 
 <!DOCTYPE html>
