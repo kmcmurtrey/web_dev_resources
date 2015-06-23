@@ -35,7 +35,7 @@ include 'global.php';
             <ol>
                 <?php foreach ( $categories as $category ) : ?>
                 <li>
-                    <a href="<?php  ?>"><?php echo $category['category']; ?></a>
+                    <a href="<?php echo 'index.php?category=' . $category['category']; ?>"><?php echo $category['category']; ?></a>
                 </li>
                 <?php endforeach; ?>
             </ol>
