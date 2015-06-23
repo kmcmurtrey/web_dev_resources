@@ -33,11 +33,11 @@ include 'global.php';
             <h2>Category</h2>
 
             <ol>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>PHP</li>
-                <li>General</li>
+                <?php foreach ( $categories as $category ) : ?>
+                <li>
+                    <a href="<?php  ?>"><?php echo $category['category']; ?></a>
+                </li>
+                <?php endforeach; ?>
             </ol>
         </div>
         <a href="new.php" class="button">New Website</a>
