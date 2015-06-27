@@ -1,4 +1,4 @@
-<div class="modal fade">
+<div id="confirm-delete" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -10,7 +10,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <a href="delete.php?id=<?php echo $website['id'] ?>" class="btn btn-primary" role="button">Delete</a>
+                <a href="../delete.php?id=<?php echo $website['id'] ?>" class="btn btn-primary" role="button">Delete</a>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
