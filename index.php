@@ -1,6 +1,6 @@
 <?php
 include 'global.php';
-//include 'views/confirm_delete_modal.php';
+include 'views/confirm_delete_modal.php';
 
 ?>
 
@@ -14,6 +14,9 @@ include 'global.php';
 
     <link href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -29,7 +32,9 @@ include 'global.php';
                         <a href="<?php echo $website['url'] ?>" class="website-title"><?php echo $website['title'] ?></a>
                         <p>Description: <?php echo $website['description'] ?></p>
                         <a href="edit.php?id=<?php echo $website['id'] ?>" class="btn btn-primary btn-xs" role="button">Edit</a>
-                        <a onclick="return confirm('Are you sure?')" href="delete.php?id=<?php echo $website['id'] ?>" class="btn btn-default btn-xs" role="button">Delete</a>
+<!--                        <a onclick="return confirm('Are you sure?')" href="delete.php?id=--><?php //echo $website['id'] ?><!--" class="btn btn-default btn-xs" role="button">Delete</a>-->
+                        <a class="btn btn-default btn-xs" role="button" data-toggle="modal" data-target="#confirm-delete">Delete</a>
+<!--                        <button class="btn btn-xs btn-default" type="button" data-toggle="modal" data-target="#confirm-delete" data-title="Delete User">Delete</button>-->
                     </li>
                 <?php endforeach; ?>
             </ol>
@@ -47,10 +52,7 @@ include 'global.php';
             </ol>
         </div>
         <a href="new.php" class="button">New Website</a>
-        <?php include 'views/confirm_delete_modal.php'; ?>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
