@@ -6,7 +6,12 @@ include 'global.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Web Development Resources</title>
+
+    <link href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -22,9 +27,8 @@ include 'global.php';
                         <!-- output: <a href="__URL__">__TITLE__</a> -->
                         <a href="<?php echo $website['url'] ?>" class="website-title"><?php echo $website['title'] ?></a>
                         <p>Description: <?php echo $website['description'] ?></p>
-                        <a href="edit.php?id=<?php echo $website['id'] ?>" class="button">Edit</a>
-                        <a href="" class="btn btn-default btn-sm" role="button">Delete</a>
-<!--                        <a href="delete.php?id=--><?php //echo $website['id'] ?><!--" class="button">Delete</a>-->
+                        <a href="edit.php?id=<?php echo $website['id'] ?>" class="btn btn-primary btn-xs" role="button">Edit</a>
+                        <a href="" class="btn btn-default btn-xs" role="button">Delete</a>
                     </li>
                 <?php endforeach; ?>
             </ol>
@@ -44,5 +48,6 @@ include 'global.php';
         <a href="new.php" class="button">New Website</a>
     </div>
 
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
