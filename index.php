@@ -23,7 +23,8 @@ include 'global.php';
                         <a href="<?php echo $website['url'] ?>" class="website-title"><?php echo $website['title'] ?></a>
                         <p>Description: <?php echo $website['description'] ?></p>
                         <a href="edit.php?id=<?php echo $website['id'] ?>" class="button">Edit</a>
-                        <a href="delete.php?id=<?php echo $website['id'] ?>" class="button">Delete</a>
+                        <a href="" class="btn btn-default btn-sm" role="button">Delete</a>
+<!--                        <a href="delete.php?id=--><?php //echo $website['id'] ?><!--" class="button">Delete</a>-->
                     </li>
                 <?php endforeach; ?>
             </ol>
