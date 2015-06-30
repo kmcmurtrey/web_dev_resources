@@ -31,16 +31,18 @@ if (isset($_POST['save_website'])) {
         //define input variables sent via POST
         $url = $_POST['url'];
         $title = $_POST['title'];
+        $category = $_POST['category'];
         $description = $_POST['description'];
 
         //prepare statement to update website's information
-        $stmt = $dbh->prepare("UPDATE websites SET url = :url, title = :title, description = :description WHERE id = :id");
+        $stmt = $dbh->prepare("UPDATE websites SET url = :url, title = :title, description = :description, category = :category WHERE id = :id");
 
         //execute SQL update query
         if ($stmt->execute(array(
             'url' => $url,
             'title' => $title,
             'description' => $description,
+            'category' => $category,
             'id' => $_GET['id']
         ))) {
             header('Location: index.php');
