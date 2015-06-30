@@ -20,12 +20,6 @@ a {
     font-weight: bold;
 }
 
-.container {
-    max-width: 1000px;
-    margin: 20px auto;
-    height: 100%;
-}
-
 .container h1 {
     text-align: center;
 }
@@ -33,18 +27,11 @@ a {
 .website-list {
     border: 2px solid;
     border-radius: 5px;
-    width: 60%;
-    display: inline-block;
-    margin: 0 2.5%;
 }
 
 .sidebar {
     border: 2px solid;
     border-radius: 5px;
-    width: 30%;
-    display: inline-block;
-    vertical-align: top;
-    margin: 0 2.5%;
 }
 
 .website-list li {
