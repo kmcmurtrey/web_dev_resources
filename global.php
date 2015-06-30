@@ -2,7 +2,7 @@
 try {
     //XAMPP MySQL [username = 'root', password = '']
     //Homestead MySQL [username = 'homestead', password = 'secret']
-    $dbh = new PDO('mysql:host=localhost;dbname=php_project', 'homestead', 'secret');
+    $dbh = new PDO('mysql:host=localhost;dbname=php_project', 'root', '');
 } catch (PDOException $e) {
     echo $e->getMessage();
     die;

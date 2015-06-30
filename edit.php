@@ -7,22 +7,9 @@ if (!isset($_GET['id'])) {
     header('Location: index.php');
 }
 
-//if the form wasn't submitted
+//if the form wasn't submitted ('edit' button was selected), SELECT website data based on $_GET['id']
 if (!isset($_POST['save_website'])) {
-    try {
-        //prepare statement to find current website
-        $stmt = $dbh->prepare("SELECT * FROM websites WHERE id = :id");
-
-        //execute SQL query
-        $stmt->execute(array('id' => $_GET['id']));
-
-        //set $website variable for the form fields
-        $website = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    } catch (Exception $e) {
-        echo $e->getMessage();
-        die();
-    }
+    include 'database/selected_website.php';
 }
 
 //if the form was submitted (after editing), prepare query to update website's info in database
