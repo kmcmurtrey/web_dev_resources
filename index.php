@@ -1,5 +1,5 @@
 <?php
-include 'models/website.php';
+require 'models/website.php';
 //include 'views/confirm_delete_modal.php';
 
 $website_list = new WebsiteData();
