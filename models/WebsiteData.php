@@ -110,4 +110,18 @@ class WebsiteData
             die();
         }
     }
+
+    public function deleteWebsite($id) {
+        try {
+            $query = $this->dbh->prepare("DELETE FROM websites WHERE id = :id");
+
+            $values = ['id' => $id];
+
+            return $query->execute($values);
+
+        } catch (Exception $e) {
+            echo $e->getMessage();
+            die();
+        }
+    }
 }

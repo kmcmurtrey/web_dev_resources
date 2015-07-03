@@ -1,6 +1,6 @@
 <?php
-require 'models/website.php';
-//include 'views/confirm_delete_modal.php';
+require 'models/WebsiteData.php';
+include 'views/confirm_delete_modal.php';
 
 $website_list = new WebsiteData();
 $websites = $website_list->getWebsites();

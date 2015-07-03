@@ -1,6 +1,6 @@
 <?php
 
-require 'models/website.php';
+require 'models/WebsiteData.php';
 
 //if the id wasn't passed, go to index.php
 if (!isset($_GET['id'])) {
@@ -9,9 +9,9 @@ if (!isset($_GET['id'])) {
 }
 
 //Populate form fields with website data based on $_GET['id']
-    $website_list = new WebsiteData();
-    $website = $website_list->getWebsiteById($_GET['id']);
-    $categories = $website_list->getAllCategories();
+$website_list = new WebsiteData();
+$website = $website_list->getWebsiteById($_GET['id']);
+$categories = $website_list->getAllCategories();
 
 if ($website === false) {
     echo 'Website not found';

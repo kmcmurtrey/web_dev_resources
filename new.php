@@ -1,6 +1,6 @@
 <?php
 
-require 'models/website.php';
+require 'models/WebsiteData.php';
 
 // If form was not submitted ("Add new website" link)
 if (!isset($_POST['save_website'])) {
