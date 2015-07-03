@@ -78,4 +78,20 @@ class WebsiteData
             die();
         }
     }
+
+    public function getWebsiteById($id) {
+        try {
+            $query = $this->dbh->prepare("SELECT * FROM websites WHERE id = :id");
+
+            $values = ['id' => $id];
+
+            $query->execute($values);
+            $query = $query->fetch(PDO::FETCH_ASSOC);
+            return $query;
+
+        } catch (Exception $e) {
+            echo $e->getMessage();
+            die();
+        }
+    }
 }
