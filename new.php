@@ -5,14 +5,12 @@ require 'models/website.php';
 // If form was not submitted ("Add new website" link)
 if (!isset($_POST['save_website'])) {
     $website_list = new WebsiteData();
-    $website_list->connect();
     $categories = $website_list->getAllCategories();
 }
 
 // check if the form was submitted
 if (isset($_POST['save_website'])) {
     $website_list = new WebsiteData();
-    $website_list->connect();
     $website_list->addWebsite();
 }
 

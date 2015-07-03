@@ -3,6 +3,10 @@ class WebsiteData
 {
     protected $dbh;
 
+    public function __construct() {
+        $this->connect();
+    }
+
     public function connect()
     {
         try {

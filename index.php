@@ -3,7 +3,6 @@ require 'models/website.php';
 //include 'views/confirm_delete_modal.php';
 
 $website_list = new WebsiteData();
-$website_list->connect();
 $websites = $website_list->getWebsites();
 $categories = $website_list->getAllCategories();
 
