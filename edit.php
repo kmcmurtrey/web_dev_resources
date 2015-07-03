@@ -20,7 +20,10 @@ if ($website === false) {
 
 //if the form was submitted (after editing), prepare query to update database row
 if (isset($_POST['save_website'])) {
-    include 'database/edit_website.php';
+    $website_list = new WebsiteData();
+    $website_list->updateWebsite($_POST);
+    header('Location: index.php');
+    exit;
 }
 
 ?>

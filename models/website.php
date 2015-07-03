@@ -91,4 +91,23 @@ class WebsiteData
             die();
         }
     }
+
+    public function updateWebsite($post_data) {
+        try {
+            $query = $this->dbh->prepare("UPDATE websites SET url = :url, title = :title, description = :description, category = :category WHERE id = :id");
+
+            $post_data = [
+                'url' => $post_data['url'],
+                'title' => $post_data['title'],
+                'description' => $post_data['description'],
+                'category' => $post_data['category'],
+                'id' => $_GET['id']
+            ];
+
+            $query->execute($post_data);
+        } catch (Exception $e) {
+            echo $e->getMessage();
+            die();
+        }
+    }
 }
