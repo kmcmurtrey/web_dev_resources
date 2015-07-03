@@ -1,7 +1,5 @@
 <?php
 
-include 'global.php';
-
 //if the id wasn't passed, go to index.php
 if (!isset($_GET['id'])) {
     header('Location: index.php');

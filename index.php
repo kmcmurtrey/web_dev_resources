@@ -1,5 +1,4 @@
 <?php
-//include 'global.php';
 include 'models/website.php';
 //include 'views/confirm_delete_modal.php';
 

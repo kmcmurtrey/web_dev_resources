@@ -1,6 +1,4 @@
-<?php 
-
-include 'global.php';
+<?php
 
 // check if the form was submitted
 if (isset($_POST['save_website'])) {
