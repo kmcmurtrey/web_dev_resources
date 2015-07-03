@@ -26,6 +26,7 @@
         </div>
 
         <div>
+            <input type="hidden" name="id" <?php if (isset($_GET['id'])) {echo 'value="' . $website['id'] . '"';} ?>>
             <input type="submit" name="save_website" />
         </div>
     </fieldset>

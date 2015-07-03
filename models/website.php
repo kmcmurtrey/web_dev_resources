@@ -101,7 +101,7 @@ class WebsiteData
                 'title' => $post_data['title'],
                 'description' => $post_data['description'],
                 'category' => $post_data['category'],
-                'id' => $_GET['id']
+                'id' => $post_data['id']
             ];
 
             $query->execute($post_data);
