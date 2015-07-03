@@ -21,9 +21,13 @@ if ($website === false) {
 //if the form was submitted (after editing), prepare query to update database row
 if (isset($_POST['save_website'])) {
     $website_list = new WebsiteData();
-    $website_list->updateWebsite($_POST);
-    header('Location: index.php');
-    exit;
+    if ($website_list->updateWebsite($_POST)) {
+        header('Location: index.php');
+        exit;
+    } else {
+        echo 'An error occurred when saving the website.';
+        exit;
+    }
 }
 
 ?>
