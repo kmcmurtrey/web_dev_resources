@@ -39,8 +39,7 @@ class WebsiteData
                 $query->execute(array(
                     'category' => $_GET['category']
                 ));
-                $query = $query->fetchAll(PDO::FETCH_ASSOC);
-                return $query;
+                return $query->fetchAll(PDO::FETCH_ASSOC);
             } catch (Exception $e) {
                 echo $e->getMessage();
                 die();
@@ -53,8 +52,7 @@ class WebsiteData
         try {
             $query = $this->dbh->prepare("SELECT DISTINCT category FROM websites ORDER BY category");
             $query->execute();
-            $query = $query->fetchAll(PDO::FETCH_ASSOC);
-            return $query;
+            return $query->fetchAll(PDO::FETCH_ASSOC);
         } catch (Exception $e) {
             echo $e->getMessage();
             die();
@@ -86,8 +84,7 @@ class WebsiteData
             $values = ['id' => $id];
 
             $query->execute($values);
-            $query = $query->fetch(PDO::FETCH_ASSOC);
-            return $query;
+            return $query->fetch(PDO::FETCH_ASSOC);
 
         } catch (Exception $e) {
             echo $e->getMessage();
