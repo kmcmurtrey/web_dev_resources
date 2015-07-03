@@ -61,24 +61,18 @@ class WebsiteData
         }
     }
 
-    public function addWebsite() {
+    public function addWebsite($post_data) {
         try {
             $query = $this->dbh->prepare("INSERT INTO websites (url, title, category, description) VALUES (:url, :title, :category, :description)");
 
-            //run the SQL query
-            if ($query->execute(array(
-                'url' => $_POST['url'],
-                'title' => $_POST['title'],
-                'category' => $_POST['category'],
-                'description' => $_POST['description']
-            ))
-            ) {
-                //go back to index.php
-                header('Location: index.php');
-            } else {
-                //display an error if failed
-                echo "Failed to add website";
-            }
+            $post_data = [
+                'url' => $post_data['url'],
+                'title' => $post_data['title'],
+                'category' => $post_data['category'],
+                'description' => $post_data['description']
+            ];
+
+            $query->execute($post_data);
         } catch (Exception $e) {
             echo $e->getMessage();
             die();

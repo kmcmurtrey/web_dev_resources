@@ -11,7 +11,9 @@ if (!isset($_POST['save_website'])) {
 // check if the form was submitted
 if (isset($_POST['save_website'])) {
     $website_list = new WebsiteData();
-    $website_list->addWebsite();
+    $website_list->addWebsite($_POST);
+    header('Location: index.php');
+    exit;
 }
 
 ?>
