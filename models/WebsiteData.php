@@ -70,7 +70,7 @@ class WebsiteData
                 'description' => $post_data['description']
             ];
 
-            $query->execute($post_data);
+            return $query->execute($post_data);
         } catch (Exception $e) {
             echo $e->getMessage();
             die();
@@ -104,7 +104,7 @@ class WebsiteData
                 'id' => $post_data['id']
             ];
 
-            $query->execute($post_data);
+            return $query->execute($post_data);
         } catch (Exception $e) {
             echo $e->getMessage();
             die();

@@ -1,6 +1,6 @@
 <?php
 
-require 'models/WebsiteData.php';
+require '../models/WebsiteData.php';
 
 // If form was not submitted ("Add new website" link)
 if (!isset($_POST['save_website'])) {
@@ -26,7 +26,7 @@ if (isset($_POST['save_website'])) {
 <html lang="en">
     <head>
         <title>Web Development Resources</title>
-        <link rel="stylesheet" type="text/css" href="views/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../views/css/style.css">
     </head>
     <body>
         <div class="container">

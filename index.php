@@ -36,12 +36,12 @@ $categories = $website_list->getAllCategories();
                             <!-- output: <a href="__URL__">__TITLE__</a> -->
                             <a href="<?php echo $website['url'] ?>" class="website-title"><?php echo $website['title'] ?></a>
                             <p>Description: <?php echo $website['description'] ?></p>
-                            <a href="edit.php?id=<?php echo $website['id'] ?>" class="btn btn-primary btn-xs" role="button">Edit</a>
+                            <a href="public/edit.php?id=<?php echo $website['id'] ?>" class="btn btn-primary btn-xs" role="button">Edit</a>
                             <a class="btn btn-default btn-xs delete-btn" role="button" data-toggle="modal" data-target="#confirm-delete" data-href="delete.php?id=<?php echo $website['id']; ?>">Delete</a>
                         </li>
                     <?php endforeach; ?>
                 </ol>
-                <a href="new.php" class="button">New Website</a>
+                <a href="public/new.php" class="button">New Website</a>
             </div>
 
             <div class="sidebar col-md-3 col-md-offset-1">

@@ -1,6 +1,6 @@
 <?php
 
-require 'models/WebsiteData.php';
+require '../models/WebsiteData.php';
 
 //if the id wasn't passed, go to index.php
 if (!isset($_GET['id'])) {
@@ -22,7 +22,7 @@ if ($website === false) {
 if (isset($_POST['save_website'])) {
     $website_list = new WebsiteData();
     if ($website_list->updateWebsite($_POST)) {
-        header('Location: index.php');
+        header('Location: ../index.php');
         exit;
     } else {
         echo 'An error occurred when saving the website.';
@@ -36,7 +36,7 @@ if (isset($_POST['save_website'])) {
 <html lang="en">
 <head>
     <title>Web Development Resources</title>
-    <link rel="stylesheet" type="text/css" href="views/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../views/css/style.css">
 </head>
 <body>
 <div class="container">
