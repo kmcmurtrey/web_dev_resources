@@ -1,13 +1,11 @@
 <?php
-require '../models/WebsiteData.php';
-include '../views/confirm_delete_modal.php';
+require 'models/WebsiteData.php';
 
 $website_list = new WebsiteData();
 $websites = $website_list->getWebsites();
 $categories = $website_list->getAllCategories();
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,14 +14,24 @@ $categories = $website_list->getAllCategories();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Web Development Resources</title>
 
-    <link href="../vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../views/css/style.css">
+    <link href="/vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/views/css/style.css">
 
-    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="../vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../views/js/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/views/js/app.js"></script>
 </head>
 <body>
+    <nav class="navbar navbar-default navbar-inverse" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.php">Web Development Resources</a>
+            </div>
+            <button type="button" class="btn btn-default navbar-btn navbar-right">New Website</button>
+        </div>
+
+    </nav>
+
     <div class="container">
 
         <h1><a href="index.php">Web Development Resources</a></h1>
@@ -36,12 +44,11 @@ $categories = $website_list->getAllCategories();
                             <!-- output: <a href="__URL__">__TITLE__</a> -->
                             <a href="<?php echo $website['url'] ?>" class="website-title"><?php echo $website['title'] ?></a>
                             <p>Description: <?php echo $website['description'] ?></p>
-                            <a href="edit.php?id=<?php echo $website['id'] ?>" class="btn btn-primary btn-xs" role="button">Edit</a>
+                            <a href="public/edit.php?id=<?php echo $website['id'] ?>" class="btn btn-primary btn-xs" role="button">Edit</a>
                             <a class="btn btn-default btn-xs delete-btn" role="button" data-toggle="modal" data-target="#confirm-delete" data-href="delete.php?id=<?php echo $website['id']; ?>">Delete</a>
                         </li>
                     <?php endforeach; ?>
                 </ol>
-                <a href="new.php" class="button">New Website</a>
             </div>
 
             <div class="sidebar col-md-3 col-md-offset-1">
@@ -59,6 +66,6 @@ $categories = $website_list->getAllCategories();
         </div>
 
     </div>
-
+<?php include 'views/confirm_delete_modal.php'; ?>
 </body>
 </html>
