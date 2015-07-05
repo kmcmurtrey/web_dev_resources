@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+body {
+    /*bottom padding for footer*/
+    /*padding-bottom: 70px;*/
+}
+
 p {
     margin: .5em 0;
 }
@@ -76,4 +81,13 @@ textarea {
 input[type="submit"] {
     margin-left: 105px;
     width: 100px;
+}
+
+.navbar-bottom {
+    margin: 20px 0 0;
+}
+
+.navbar-footer {
+    text-align: center;
+    color: #fff;
 }

@@ -1,5 +1,5 @@
 <?php
-require 'models/WebsiteData.php';
+require '../models/WebsiteData.php';
 
 $website_list = new WebsiteData();
 $websites = $website_list->getWebsites();
@@ -27,7 +27,7 @@ $categories = $website_list->getAllCategories();
             <div class="navbar-header">
                 <a class="navbar-brand" href="index.php">Web Development Resources</a>
             </div>
-            <button type="button" class="btn btn-default navbar-btn navbar-right">New Website</button>
+            <a href="new.php" type="button" class="btn btn-default navbar-btn navbar-right">New Website</a>
         </div>
 
     </nav>
@@ -44,7 +44,7 @@ $categories = $website_list->getAllCategories();
                             <!-- output: <a href="__URL__">__TITLE__</a> -->
                             <a href="<?php echo $website['url'] ?>" class="website-title"><?php echo $website['title'] ?></a>
                             <p>Description: <?php echo $website['description'] ?></p>
-                            <a href="public/edit.php?id=<?php echo $website['id'] ?>" class="btn btn-primary btn-xs" role="button">Edit</a>
+                            <a href="edit.php?id=<?php echo $website['id'] ?>" class="btn btn-primary btn-xs" role="button">Edit</a>
                             <a class="btn btn-default btn-xs delete-btn" role="button" data-toggle="modal" data-target="#confirm-delete" data-href="delete.php?id=<?php echo $website['id']; ?>">Delete</a>
                         </li>
                     <?php endforeach; ?>
@@ -66,6 +66,15 @@ $categories = $website_list->getAllCategories();
         </div>
 
     </div>
-<?php include 'views/confirm_delete_modal.php'; ?>
+
+    <nav class="navbar navbar-default navbar-inverse navbar-bottom" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-footer">
+                <p class="copyright">&copy 2015 Korey McMurtrey</p>
+            </div>
+        </div>
+
+    </nav>
+<?php include '../views/confirm_delete_modal.php'; ?>
 </body>
 </html>
