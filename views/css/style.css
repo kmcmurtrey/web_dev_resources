@@ -43,45 +43,47 @@ a {
     margin-bottom: 1em;
 }
 
-fieldset {
-    width: 720px;
-    margin: 0 auto;
-}
+/*Form*/
 
-legend {
-    font-size: 2em;
-    margin-bottom: 10px;
-}
+/*fieldset {*/
+    /*width: 720px;*/
+    /*margin: 0 auto;*/
+/*}*/
 
-label {
-    width: 100px;
-    font-weight: bold;
-    text-align: right;
-    float: left;
-}
+/*legend {*/
+    /*font-size: 2em;*/
+    /*margin-bottom: 10px;*/
+/*}*/
 
-input {
-    width: 500px;
-    float: left;
-}
+/*label {*/
+    /*width: 100px;*/
+    /*font-weight: bold;*/
+    /*text-align: right;*/
+    /*float: left;*/
+/*}*/
 
-select {
-    width: 100px;
-}
+/*input {*/
+    /*width: 500px;*/
+    /*float: left;*/
+/*}*/
 
-input, textarea, select {
-    margin: 5px;
-}
+/*select {*/
+    /*width: 100px;*/
+/*}*/
 
-textarea {
-    width: 500px;
-    height: 200px;
-}
+/*input, textarea, select {*/
+    /*margin: 5px;*/
+/*}*/
 
-input[type="submit"] {
-    margin-left: 105px;
-    width: 100px;
-}
+/*textarea {*/
+    /*width: 500px;*/
+    /*height: 200px;*/
+/*}*/
+
+/*input[type="submit"] {*/
+    /*margin-left: 105px;*/
+    /*width: 100px;*/
+/*}*/
 
 .navbar-bottom {
     margin: 20px 0 0;

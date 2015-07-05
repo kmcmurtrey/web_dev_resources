@@ -1,33 +1,32 @@
 <form method="POST" class="website_form">
     <fieldset>
-        <legend>Website Info</legend>
-        <div>
+        <div class="form-group col-md-8 col-md-offset-2">
             <label for="title">Title</label>
-            <input type="text" name="title" <?php if (isset($_GET['id'])) {echo 'value="' . $website['title'] . '"';} ?>>
+            <input type="text" name="title" class="form-control" <?php if (isset($_GET['id'])) {echo 'value="' . $website['title'] . '"';} ?>>
         </div>
 
-        <div>
+        <div class="form-group col-md-8 col-md-offset-2">
             <label for="url">URL</label>
-            <input type="text" name="url" <?php if (isset($_GET['id'])) {echo 'value="' . $website['url'] . '"';} ?>>
+            <input type="text" name="url" class="form-control" <?php if (isset($_GET['id'])) {echo 'value="' . $website['url'] . '"';} ?>>
         </div>
 
-        <div>
+        <div class="form-group col-md-8 col-md-offset-2">
             <label for="category">Category</label>
-            <select name="category">
+            <select name="category" class="form-control">
                 <?php foreach ($categories as $category) : ?>
                     <option <?php if (isset($_GET['id']) && $website['category'] == $category['category']) {echo 'selected="selected"';}?>><?php echo $category['category']; ?></option>
                 <?php endforeach; ?>
             </select>
         </div>
 
-        <div>
+        <div class="form-group col-md-8 col-md-offset-2">
             <label for="description">Description</label>
-            <textarea type="text" name="description"><?php if (isset($_GET['id'])) {echo $website['description'];} ?></textarea>
+            <textarea type="text" name="description" class="form-control" rows="8"><?php if (isset($_GET['id'])) {echo $website['description'];} ?></textarea>
         </div>
 
-        <div>
+        <div class="form-group col-md-8 col-md-offset-2">
             <input type="hidden" name="id" <?php if (isset($_GET['id'])) {echo 'value="' . $website['id'] . '"';} ?>>
-            <input type="submit" name="save_website" />
+            <input type="submit" name="save_website" class="form-control btn btn-primary"/>
         </div>
     </fieldset>
 </form>
