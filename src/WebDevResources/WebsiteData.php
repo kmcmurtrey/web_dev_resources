@@ -1,4 +1,6 @@
 <?php
+namespace WebDevResources;
+
 class WebsiteData
 {
     protected $dbh;
@@ -12,8 +14,8 @@ class WebsiteData
         try {
             //XAMPP MySQL [username = 'root', password = '']
             //Homestead MySQL [username = 'homestead', password = 'secret']
-            $this->dbh = new PDO('mysql:host=localhost;dbname=php_project', 'homestead', 'secret');
-        } catch (PDOException $e) {
+            $this->dbh = new \PDO('mysql:host=localhost;dbname=php_project', 'homestead', 'secret');
+        } catch (\PDOException $e) {
             echo $e->getMessage();
             die;
         }
@@ -25,7 +27,7 @@ class WebsiteData
             try {
                 $query = $this->dbh->prepare("SELECT * FROM websites");
                 $query->execute();
-                $query = $query->fetchAll(PDO::FETCH_ASSOC);
+                $query = $query->fetchAll(\PDO::FETCH_ASSOC);
                 return $query;
             } catch (Exception $e) {
                 echo $e->getMessage();
@@ -39,7 +41,7 @@ class WebsiteData
                 $query->execute(array(
                     'category' => $_GET['category']
                 ));
-                return $query->fetchAll(PDO::FETCH_ASSOC);
+                return $query->fetchAll(\PDO::FETCH_ASSOC);
             } catch (Exception $e) {
                 echo $e->getMessage();
                 die();
@@ -52,7 +54,7 @@ class WebsiteData
         try {
             $query = $this->dbh->prepare("SELECT DISTINCT category FROM websites ORDER BY category");
             $query->execute();
-            return $query->fetchAll(PDO::FETCH_ASSOC);
+            return $query->fetchAll(\PDO::FETCH_ASSOC);
         } catch (Exception $e) {
             echo $e->getMessage();
             die();
@@ -84,7 +86,7 @@ class WebsiteData
             $values = ['id' => $id];
 
             $query->execute($values);
-            return $query->fetch(PDO::FETCH_ASSOC);
+            return $query->fetch(\PDO::FETCH_ASSOC);
 
         } catch (Exception $e) {
             echo $e->getMessage();
