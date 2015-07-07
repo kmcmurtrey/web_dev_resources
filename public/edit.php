@@ -1,7 +1,6 @@
 <?php
 
-require '../src/WebDevResources/WebsiteData.php';
-require '../src/WebDevResources/Template.php';
+require '../vendor/autoload.php';
 
 //if the id wasn't passed, display error
 if (!isset($_GET['id'])) {

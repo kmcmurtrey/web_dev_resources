@@ -1,6 +1,5 @@
 <?php
-require '../src/WebDevResources/WebsiteData.php';
-require '../src/WebDevResources/Template.php';
+require '../vendor/autoload.php';
 include '../views/confirm_delete_modal.php';
 
 $website_list = new \WebDevResources\WebsiteData();

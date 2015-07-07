@@ -1,6 +1,6 @@
 <?php
 
-require '../src/WebDevResources/WebsiteData.php';
+require '../vendor/autoload.php';
 
 //if the id wasn't passed, go to index.php
 if (!isset($_GET['id']) || empty($_GET['id'])) {

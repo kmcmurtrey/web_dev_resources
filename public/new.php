@@ -1,7 +1,6 @@
 <?php
 
-require '../src/WebDevResources/WebsiteData.php';
-require '../src/WebDevResources/Template.php';
+require '../vendor/autoload.php';
 
 // If form was not submitted ("Add new website" link)
 if (!isset($_POST['save_website'])) {
