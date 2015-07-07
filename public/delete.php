@@ -8,7 +8,7 @@ if (!isset($_GET['id']) || empty($_GET['id'])) {
     exit;
 }
 
-$website_list = new WebsiteData();
+$website_list = new \WebDevResources\WebsiteData();
 $website = $website_list->getWebsiteById($_GET['id']);
 
 if ($website === false) {
