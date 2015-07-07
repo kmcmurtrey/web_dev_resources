@@ -22,4 +22,4 @@ if (isset($_POST['save_website'])) {
 }
 
 $template = new \WebDevResources\Template('../views/base.phtml');
-$template->render('../views/index/new.phtml');
+$template->render('../views/index/new.phtml', ['categories' => $categories]);
