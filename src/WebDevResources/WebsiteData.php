@@ -53,19 +53,7 @@ class WebsiteData
         return count($this->getWebsites());
     }
 
-    public function getWebsitesSubset($start, $end) {
-        $allWebsites = $this->getWebsites();
-        $subset = array();
-        $position = 0;
 
-        foreach ($allWebsites as $website) {
-            $position += 1;
-            if ($position >= $start && $position <= $end) {
-                $subset[] = $website;
-            }
-        }
-        return $subset;
-    }
 
     public function getAllCategories()
     {

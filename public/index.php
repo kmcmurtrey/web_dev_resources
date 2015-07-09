@@ -3,7 +3,10 @@ require '../vendor/autoload.php';
 include '../views/confirm_delete_modal.php';
 
 $website_list = new \WebDevResources\WebsiteData();
-$websites = $website_list->getWebsites();
+$p = new \WebDevResources\Paginator();
+$start = $p->getStart();
+$end = $p->getEnd();
+$websites = $p->getWebsitesSubset($start, $end);
 $categories = $website_list->getAllCategories();
 
 $template = new \WebDevResources\Template('../views/base.phtml');
