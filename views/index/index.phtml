@@ -3,6 +3,7 @@
 //Assign $websites and $categories data to $this-> so the template can access it.
 $websites = $this->websites;
 $categories = $this->categories;
+$p = $this->p;
 ?>
 
 <h1><a href="index.php">Web Development Resources</a></h1>
@@ -33,5 +34,15 @@ $categories = $this->categories;
             <?php endforeach; ?>
         </ol>
 
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <ul class="pagination">
+            <?php for ($i = 1; $i <= $p->totalPages; $i++) { ?>
+                <?php echo '<li>' . $i . '</li>'; ?>
+            <?php }; ?>
+        </ul>
     </div>
 </div>
