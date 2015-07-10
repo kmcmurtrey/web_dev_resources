@@ -9,6 +9,7 @@ $p = $this->p;
 <h1><a href="index.php">Web Development Resources</a></h1>
 <div class="row">
     <div class="website-list col-md-6 col-md-offset-1">
+        <h2><?php if (isset($_GET['category'])) {echo $_GET['category'];} else {echo 'All Websites';} ?></h2>
         <ul>
             <!-- loop through each website -->
             <?php foreach( $websites as $website ) : ?>
