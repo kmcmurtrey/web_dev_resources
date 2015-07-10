@@ -9,7 +9,7 @@ $p = $this->p;
 <h1><a href="index.php">Web Development Resources</a></h1>
 <div class="row">
     <div class="website-list col-md-6 col-md-offset-1">
-        <ol>
+        <ul>
             <!-- loop through each website -->
             <?php foreach( $websites as $website ) : ?>
                 <li>
@@ -20,19 +20,19 @@ $p = $this->p;
                     <a class="btn btn-default btn-xs delete-btn" role="button" data-toggle="modal" data-target="#confirm-delete" data-href="delete.php?id=<?php echo $website['id']; ?>">Delete</a>
                 </li>
             <?php endforeach; ?>
-        </ol>
+        </ul>
     </div>
 
     <div class="sidebar col-md-3 col-md-offset-1">
         <h2>Category</h2>
 
-        <ol>
+        <ul>
             <?php foreach ( $categories as $category ) : ?>
                 <li>
                     <a href="<?php echo 'index.php?category=' . $category['category']; ?>"><?php echo $category['category']; ?></a>
                 </li>
             <?php endforeach; ?>
-        </ol>
+        </ul>
 
     </div>
 </div>

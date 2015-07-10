@@ -8,7 +8,7 @@
 
 body {
     /*bottom padding for footer*/
-    /*padding-bottom: 70px;*/
+    padding-bottom: 70px;
 }
 
 p {
@@ -29,14 +29,34 @@ a {
     text-align: center;
 }
 
+ul {
+    list-style: none;
+}
+
 .website-list {
     border: 2px solid;
     border-radius: 5px;
 }
 
+.website-list ul {
+    padding: 10px;
+}
+
+.website-list ul li {
+    margin-bottom: 25px;
+}
+
+.website-list ul li p {
+    margin: 0 0 5px;
+}
+
 .sidebar {
     border: 2px solid;
     border-radius: 5px;
+}
+
+.sidebar ul {
+    padding: 0;
 }
 
 .website-list li {
