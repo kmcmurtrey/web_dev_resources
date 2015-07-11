@@ -25,7 +25,7 @@ class WebsiteData
     {
         if (!isset($_GET['category'])) {
             try {
-                $query = $this->dbh->prepare("SELECT * FROM websites");
+                $query = $this->dbh->prepare("SELECT websites.*, votes.count FROM websites INNER JOIN votes ON (votes.website_id = websites.id)");
                 $query->execute();
                 $query = $query->fetchAll(\PDO::FETCH_ASSOC);
                 return $query;
@@ -37,7 +37,7 @@ class WebsiteData
 
         if (isset($_GET['category'])) {
             try {
-                $query = $this->dbh->prepare("SELECT * FROM websites WHERE category = :category");
+                $query = $this->dbh->prepare("SELECT websites.*, votes.count FROM websites INNER JOIN votes ON (votes.website_id = websites.id) WHERE category = :category");
                 $query->execute(array(
                     'category' => $_GET['category']
                 ));
