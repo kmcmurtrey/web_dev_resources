@@ -68,6 +68,7 @@ class WebsiteData
     }
 
     public function addWebsite($post_data) {
+        //Insert new website data into websites table
         try {
             $query = $this->dbh->prepare("INSERT INTO websites (url, title, category, description) VALUES (:url, :title, :category, :description)");
 
@@ -76,6 +77,22 @@ class WebsiteData
                 'title' => $post_data['title'],
                 'category' => $post_data['category'],
                 'description' => $post_data['description']
+            ];
+
+            $query->execute($post_data);
+        } catch (Exception $e) {
+            echo $e->getMessage();
+            die();
+        }
+
+        //Insert empty row into votes table after creating website
+        $vote_id = $this->dbh->lastInsertId();
+
+        try {
+            $query = $this->dbh->prepare("INSERT INTO votes (website_id, count) VALUES (:id, 0)");
+
+            $post_data = [
+                'id' => $vote_id
             ];
 
             return $query->execute($post_data);
