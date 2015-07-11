@@ -80,15 +80,9 @@ class WebsiteData
             ];
 
             $query->execute($post_data);
-        } catch (Exception $e) {
-            echo $e->getMessage();
-            die();
-        }
 
-        //Insert empty row into votes table after creating website
-        $vote_id = $this->dbh->lastInsertId();
-
-        try {
+            //Insert empty row into votes table after creating website
+            $vote_id = $this->dbh->lastInsertId();
             $query = $this->dbh->prepare("INSERT INTO votes (website_id, count) VALUES (:id, 0)");
 
             $post_data = [
@@ -100,6 +94,8 @@ class WebsiteData
             echo $e->getMessage();
             die();
         }
+
+
     }
 
     public function getWebsiteById($id) {
@@ -142,6 +138,14 @@ class WebsiteData
 
             $values = ['id' => $id];
 
+            $result = $query->execute($values);
+
+            if (!$result) {
+                return false;
+            }
+
+            //Remove corresponding row from votes table when deleting website
+            $query = $this->dbh->prepare("DELETE FROM votes WHERE website_id = :id");
             return $query->execute($values);
 
         } catch (Exception $e) {
