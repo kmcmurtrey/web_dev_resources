@@ -4,6 +4,8 @@ include '../views/confirm_delete_modal.php';
 
 $website_list = new \WebDevResources\WebsiteData();
 $p = new \WebDevResources\Paginator();
+$votes = new \WebDevResources\Votes();
+$votes->checkForId();
 $start = $p->getStart();
 $end = $p->getEnd();
 $websites = $p->getWebsitesSubset($start, $end);
