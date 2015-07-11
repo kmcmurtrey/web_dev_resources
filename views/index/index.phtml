@@ -17,8 +17,19 @@ $p = $this->p;
                     <!-- output: <a href="__URL__">__TITLE__</a> -->
                     <a href="<?php echo $website['url'] ?>" class="website-title"><?php echo $website['title'] ?></a>
                     <p>Description: <?php echo $website['description'] ?></p>
-                    <a href="edit.php?id=<?php echo $website['id'] ?>" class="btn btn-primary btn-xs" role="button">Edit</a>
-                    <a class="btn btn-default btn-xs delete-btn" role="button" data-toggle="modal" data-target="#confirm-delete" data-href="delete.php?id=<?php echo $website['id']; ?>">Delete</a>
+
+                    <!--Vote button-->
+                    <a href="" class="btn btn-success btn-sm">
+                        <span class="glyphicon glyphicon-thumbs-up">
+                            <?php if (isset($website['count'])) {echo $website['count'];} else {echo 0;} ?>
+                        </span>
+                    </a>
+
+                    <!--Edit button-->
+                    <a href="edit.php?id=<?php echo $website['id'] ?>" class="btn btn-primary btn-sm" role="button">Edit</a>
+
+                    <!--Delete button-->
+                    <a class="btn btn-default btn-sm delete-btn" role="button" data-toggle="modal" data-target="#confirm-delete" data-href="delete.php?id=<?php echo $website['id']; ?>">Delete</a>
                 </li>
             <?php endforeach; ?>
         </ul>
