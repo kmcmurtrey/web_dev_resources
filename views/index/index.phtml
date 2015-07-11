@@ -26,10 +26,18 @@ $p = $this->p;
                     </a>
 
                     <!--Edit button-->
-                    <a href="edit.php?id=<?php echo $website['id'] ?>" class="btn btn-primary btn-sm" role="button">Edit</a>
+                    <a href="edit.php?id=<?php echo $website['id'] ?>" class="btn btn-primary btn-sm" role="button">
+                        <span class="glyphicon glyphicon-pencil">
+                            Edit
+                        </span>
+                    </a>
 
                     <!--Delete button-->
-                    <a class="btn btn-default btn-sm delete-btn" role="button" data-toggle="modal" data-target="#confirm-delete" data-href="delete.php?id=<?php echo $website['id']; ?>">Delete</a>
+                    <a class="btn btn-default btn-sm delete-btn" role="button" data-toggle="modal" data-target="#confirm-delete" data-href="delete.php?id=<?php echo $website['id']; ?>">
+                        <span class="glyphicon glyphicon-remove">
+                            Delete
+                        </span>
+                    </a>
                 </li>
             <?php endforeach; ?>
         </ul>
