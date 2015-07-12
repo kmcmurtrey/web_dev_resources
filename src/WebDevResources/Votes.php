@@ -41,4 +41,13 @@ class Votes {
             die();
         }
     }
+
+    public function getVoteUrl($id, $currentPage) {
+        echo '"index.php?id=' . $id . '&pg=' . $currentPage;
+        if (isset($_GET['category'])) {
+            echo '&category=' . $_GET['category'] . '"';
+        } else {
+            echo '"';
+        }
+    }
 }

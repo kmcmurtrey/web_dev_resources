@@ -13,4 +13,4 @@ $categories = $website_list->getAllCategories();
 
 $template = new \WebDevResources\Template('../views/base.phtml');
 //Render the content template we want, passing through the $websites and $categories variables so the template can access them.
-$template->render('../views/index/index.phtml', ['websites' => $websites, 'categories' => $categories, 'p' => $p]);
+$template->render('../views/index/index.phtml', ['websites' => $websites, 'categories' => $categories, 'p' => $p, 'votes' => $votes]);
