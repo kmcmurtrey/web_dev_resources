@@ -11,7 +11,18 @@ $votes = $this->votes;
 <div class="row">
     <div class="website-list col-md-6 col-md-offset-1">
         <h2><?php if (isset($_GET['category'])) {echo $_GET['category'];} else {echo 'All Websites';} ?></h2>
-        <ul>
+
+        <form class="form-inline">
+            <div class="form-group-sm pull-right">
+                <label for="sort">Sort by</label>
+                <select name="sort" class="form-control">
+                    <option>Alphabetically</option>
+                    <option>Most Popular</option>
+                </select>
+            </div>
+        </form>
+
+        <ul class="main-list">
             <!-- loop through each website -->
             <?php foreach( $websites as $website ) : ?>
                 <li>

@@ -55,6 +55,10 @@ ul {
     margin: 0 0 5px;
 }
 
+.main-list {
+    margin-top: 40px;
+}
+
 .sidebar {
     border: 2px solid;
     border-radius: 5px;
