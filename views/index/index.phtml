@@ -19,7 +19,7 @@ $p = $this->p;
                     <p>Description: <?php echo $website['description'] ?></p>
 
                     <!--Vote button-->
-                    <a href="index.php?id=<?php echo $website['id']; ?>" class="btn btn-success btn-sm">
+                    <a href="index.php?id=<?php echo $website['id']; ?>&pg=<?php echo $p->currentPage; ?>" class="btn btn-success btn-sm">
                         <span class="glyphicon glyphicon-thumbs-up">
                             <?php if (isset($website['count'])) {echo $website['count'];} else {echo 0;} ?>
                         </span>
