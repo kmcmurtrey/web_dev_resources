@@ -154,13 +154,49 @@ class WebsiteData
         }
     }
 
+    public function getSortUrl($currentPage, $sortType) {
+        echo '"index.php?pg=' . $currentPage . '&sort=' . $sortType;
+        if (isset($_GET['category'])) {
+            echo '&category=' . $_GET['category'] . '"';
+        } else {
+            echo '"';
+        }
+    }
+
+    public function checkForSort() {
+        if (isset($_GET['sort'])) {
+            $this->sortVote();
+        }
+    }
+
     public function sortAlpha() {
-        $allWebsites = $this->getWebsites();
-        var_dump($allWebsites);
-        die;
+//        $allWebsites = $this->getWebsites();
     }
 
     public function sortVote() {
-        $allWebsites = $this->getWebsites();
+        if (!isset($_GET['category']) && $_GET['sort'] = 'vote') {
+            try {
+                $query = $this->dbh->prepare("SELECT websites.*, votes.count FROM websites INNER JOIN votes ON (votes.website_id = websites.id) ORDER BY votes.count");
+                $query->execute();
+                $query = $query->fetchAll(\PDO::FETCH_ASSOC);
+                return $query;
+            } catch (Exception $e) {
+                echo $e->getMessage();
+                die();
+            }
+        }
+
+        if (isset($_GET['category']) && $_GET['sort'] = 'vote') {
+            try {
+                $query = $this->dbh->prepare("SELECT websites.*, votes.count FROM websites INNER JOIN votes ON (votes.website_id = websites.id) WHERE category = :category ORDER BY votes.count");
+                $query->execute(array(
+                    'category' => $_GET['category']
+                ));
+                return $query->fetchAll(\PDO::FETCH_ASSOC);
+            } catch (Exception $e) {
+                echo $e->getMessage();
+                die();
+            }
+        }
     }
 }

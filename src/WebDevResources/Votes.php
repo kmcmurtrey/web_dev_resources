@@ -1,14 +1,14 @@
 <?php
 namespace WebDevResources;
 
-class Votes {
+class Votes
+{
 
     public function __construct() {
         $this->connect();
     }
 
-    public function connect()
-    {
+    public function connect() {
         try {
             //XAMPP MySQL [username = 'root', password = '']
             //Homestead MySQL [username = 'homestead', password = 'secret']
@@ -27,7 +27,6 @@ class Votes {
     }
 
     public function addVote($websiteId) {
-
         try {
             $query = $this->dbh->prepare("UPDATE votes SET count = count + 1 WHERE website_id = :id");
 

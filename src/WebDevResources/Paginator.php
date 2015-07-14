@@ -8,8 +8,7 @@ class Paginator extends WebsiteData
     public $websitesPerPage;
     public $totalPages;
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->connect();
         if (empty($_GET['pg'])) {
             $this->currentPage = 1;
@@ -21,14 +20,12 @@ class Paginator extends WebsiteData
         $this->totalPages = ceil($this->totalWebsites / $this->websitesPerPage);
     }
 
-    public function getStart()
-    {
+    public function getStart() {
         $start = (($this->currentPage - 1) * $this->websitesPerPage) + 1;
         return $start;
     }
 
-    public function getEnd()
-    {
+    public function getEnd() {
         $end = $this->currentPage * $this->websitesPerPage;
         if ($end > $this->totalWebsites) {
             $end = $this->totalWebsites;
@@ -36,9 +33,12 @@ class Paginator extends WebsiteData
         return $end;
     }
 
-    public function getWebsitesSubset($start, $end)
-    {
-        $allWebsites = $this->getWebsites();
+    public function getWebsitesSubset($start, $end) {
+        if ($_GET['sort'] = 'vote') {
+            $allWebsites = $this->sortVote();
+        } else {
+            $allWebsites = $this->getWebsites();
+        }
         $subset = array();
         $position = 0;
 

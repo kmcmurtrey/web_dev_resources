@@ -1,6 +1,7 @@
 <?php
 
 //Assign $websites and $categories data to $this-> so the template can access it.
+$website_list = $this->website_list;
 $websites = $this->websites;
 $categories = $this->categories;
 $p = $this->p;
@@ -19,8 +20,8 @@ $votes = $this->votes;
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-                <li><a href="#">Alphabetically</a></li>
-                <li><a href="#">Most Popular</a></li>
+                <li><a href=<?php $this->website_list->getSortUrl($p->currentPage, 'alpha'); ?>>Alphabetically</a></li>
+                <li><a href=<?php $this->website_list->getSortUrl($p->currentPage, 'vote'); ?>>Most Popular</a></li>
             </ul>
         </div>
 
@@ -33,7 +34,7 @@ $votes = $this->votes;
                     <p>Description: <?php echo $website['description'] ?></p>
 
                     <!--Vote button-->
-                    <a href=<?php $votes->getVoteUrl($website['id'], $p->currentPage); ?> class="btn btn-success btn-sm">
+                    <a href=<?php $this->votes->getVoteUrl($website['id'], $p->currentPage); ?> class="btn btn-success btn-sm">
                         <span class="glyphicon glyphicon-thumbs-up">
                             <?php if (isset($website['count'])) {echo $website['count'];} else {echo 0;} ?>
                         </span>
