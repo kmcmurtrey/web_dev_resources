@@ -25,7 +25,7 @@ class WebsiteData
     {
         if (!isset($_GET['category'])) {
             try {
-                $query = $this->dbh->prepare("SELECT websites.*, votes.count FROM websites INNER JOIN votes ON (votes.website_id = websites.id)");
+                $query = $this->dbh->prepare("SELECT websites.*, votes.count FROM websites INNER JOIN votes ON (votes.website_id = websites.id) ORDER BY title");
                 $query->execute();
                 $query = $query->fetchAll(\PDO::FETCH_ASSOC);
                 return $query;
@@ -37,7 +37,7 @@ class WebsiteData
 
         if (isset($_GET['category'])) {
             try {
-                $query = $this->dbh->prepare("SELECT websites.*, votes.count FROM websites INNER JOIN votes ON (votes.website_id = websites.id) WHERE category = :category");
+                $query = $this->dbh->prepare("SELECT websites.*, votes.count FROM websites INNER JOIN votes ON (votes.website_id = websites.id) WHERE category = :category ORDER BY title");
                 $query->execute(array(
                     'category' => $_GET['category']
                 ));
@@ -152,5 +152,15 @@ class WebsiteData
             echo $e->getMessage();
             die();
         }
+    }
+
+    public function sortAlpha() {
+        $allWebsites = $this->getWebsites();
+        var_dump($allWebsites);
+        die;
+    }
+
+    public function sortVote() {
+        $allWebsites = $this->getWebsites();
     }
 }

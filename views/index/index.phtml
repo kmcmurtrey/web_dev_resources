@@ -12,6 +12,7 @@ $votes = $this->votes;
     <div class="website-list col-md-6 col-md-offset-1">
         <h2><?php if (isset($_GET['category'])) {echo $_GET['category'];} else {echo 'All Websites';} ?></h2>
 
+        <!-- Dropdown menu for sorting websites -->
         <div class="dropdown pull-right">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                 Sort by
