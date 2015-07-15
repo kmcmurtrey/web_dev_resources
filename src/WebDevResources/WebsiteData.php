@@ -154,8 +154,8 @@ class WebsiteData
         }
     }
 
-    public function getSortUrl($currentPage, $sortType) {
-        echo '"index.php?pg=' . $currentPage . '&sort=' . $sortType;
+    public function getSortUrl($sortType) {
+        echo '"index.php?sort=' . $sortType;
         if (isset($_GET['category'])) {
             echo '&category=' . $_GET['category'] . '"';
         } else {
