@@ -4,6 +4,6 @@
     },
 
     "autoload": {
-        "psr-4": {"WebDevResources\\": "src"}
+        "psr-4": {"": "src"}
     }
 }
