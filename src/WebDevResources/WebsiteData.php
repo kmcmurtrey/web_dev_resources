@@ -174,7 +174,7 @@ class WebsiteData
     }
 
     public function sortVote() {
-        if (!isset($_GET['category']) && $_GET['sort'] = 'vote') {
+        if (!isset($_GET['category']) && $_GET['sort'] === 'vote') {
             try {
                 $query = $this->dbh->prepare("SELECT websites.*, votes.count FROM websites INNER JOIN votes ON (votes.website_id = websites.id) ORDER BY votes.count");
                 $query->execute();
@@ -186,7 +186,7 @@ class WebsiteData
             }
         }
 
-        if (isset($_GET['category']) && $_GET['sort'] = 'vote') {
+        if (isset($_GET['category']) && $_GET['sort'] === 'vote') {
             try {
                 $query = $this->dbh->prepare("SELECT websites.*, votes.count FROM websites INNER JOIN votes ON (votes.website_id = websites.id) WHERE category = :category ORDER BY votes.count");
                 $query->execute(array(
