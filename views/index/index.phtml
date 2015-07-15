@@ -76,7 +76,7 @@ $votes = $this->votes;
     <div class="col-md-4 col-md-offset-4 text-center">
         <ul class="pagination pagination-sm">
             <?php for ($i = 1; $i <= $p->totalPages; $i++) { ?>
-                <li <?php if ($i == $p->currentPage) {echo 'class="active"';} ?>><a href="index.php?pg=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+                <li <?php if ($i == $p->currentPage) {echo 'class="active"';} ?>><a href=<?php $this->p->getPageUrl($i); ?>><?php echo $i; ?></a></li>
             <?php }; ?>
         </ul>
     </div>
