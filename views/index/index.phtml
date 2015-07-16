@@ -21,7 +21,8 @@ $votes = $this->votes;
             </button>
             <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
                 <li><a href=<?php $this->website_list->getSortUrl('alpha'); ?>>Alphabetically</a></li>
-                <li><a href=<?php $this->website_list->getSortUrl('vote'); ?>>Most Popular</a></li>
+                <li><a href=<?php $this->website_list->getSortUrl('leastPop'); ?>>Least Popular</a></li>
+                <li><a href=<?php $this->website_list->getSortUrl('mostPop'); ?>>Most Popular</a></li>
             </ul>
         </div>
 

@@ -34,7 +34,7 @@ class Paginator extends WebsiteData
     }
 
     public function getWebsitesSubset($start, $end) {
-        if (isset($_GET['sort']) && $_GET['sort'] === 'vote') {
+        if (isset($_GET['sort']) && (($_GET['sort'] === 'leastPop') || ($_GET['sort'] === 'mostPop'))) {
             $allWebsites = $this->sortVote();
         } else {
             $allWebsites = $this->getWebsites();

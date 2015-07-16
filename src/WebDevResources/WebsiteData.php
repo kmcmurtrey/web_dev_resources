@@ -170,9 +170,14 @@ class WebsiteData
     }
 
     public function sortVote() {
-        if (!isset($_GET['category']) && $_GET['sort'] === 'vote') {
-            try {
+        if (!isset($_GET['category'])) {
+            if ($_GET['sort'] === 'leastPop') {
                 $query = $this->dbh->prepare("SELECT websites.*, votes.count FROM websites INNER JOIN votes ON (votes.website_id = websites.id) ORDER BY votes.count");
+            }
+            if ($_GET['sort'] === 'mostPop') {
+                $query = $this->dbh->prepare("SELECT websites.*, votes.count FROM websites INNER JOIN votes ON (votes.website_id = websites.id) ORDER BY votes.count DESC");
+            }
+            try {
                 $query->execute();
                 $query = $query->fetchAll(\PDO::FETCH_ASSOC);
                 return $query;
@@ -182,9 +187,14 @@ class WebsiteData
             }
         }
 
-        if (isset($_GET['category']) && $_GET['sort'] === 'vote') {
-            try {
+        if (isset($_GET['category'])) {
+            if ($_GET['sort'] === 'leastPop') {
                 $query = $this->dbh->prepare("SELECT websites.*, votes.count FROM websites INNER JOIN votes ON (votes.website_id = websites.id) WHERE category = :category ORDER BY votes.count");
+            }
+            if ($_GET['sort'] === 'mostPop') {
+                $query = $this->dbh->prepare("SELECT websites.*, votes.count FROM websites INNER JOIN votes ON (votes.website_id = websites.id) WHERE category = :category ORDER BY votes.count DESC");
+            }
+            try {
                 $query->execute(array(
                     'category' => $_GET['category']
                 ));
