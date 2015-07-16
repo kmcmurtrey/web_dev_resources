@@ -169,10 +169,6 @@ class WebsiteData
         }
     }
 
-    public function sortAlpha() {
-//        $allWebsites = $this->getWebsites();
-    }
-
     public function sortVote() {
         if (!isset($_GET['category']) && $_GET['sort'] === 'vote') {
             try {
