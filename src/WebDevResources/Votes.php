@@ -12,7 +12,8 @@ class Votes
         try {
             //XAMPP MySQL [username = 'root', password = '']
             //Homestead MySQL [username = 'homestead', password = 'secret']
-            $this->dbh = new \PDO('mysql:host=localhost;dbname=php_project', 'homestead', 'secret');
+            //ScotchBox [username = 'root', password = 'root']
+            $this->dbh = new \PDO('mysql:host=localhost;dbname=php_project', 'root', 'root');
         } catch (\PDOException $e) {
             echo $e->getMessage();
             die;
