@@ -8,7 +8,7 @@ $p = $this->p;
 $votes = $this->votes;
 ?>
 
-<h1><a href="index.php">Web Development Resources</a></h1>
+<h1><a href="/web_dev_resources/public/index.php">Web Development Resources</a></h1>
 <div class="row">
     <div class="website-list col-md-6 col-md-offset-1">
         <h2><?php if (isset($_GET['category'])) {echo $_GET['category'];} else {echo 'All Websites';} ?></h2>
@@ -65,7 +65,7 @@ $votes = $this->votes;
         <ul>
             <?php foreach ( $categories as $category ) : ?>
                 <li>
-                    <a href="<?php echo 'index.php?category=' . $category['category']; ?>"><?php echo $category['category']; ?></a>
+                    <?php echo '<a href=' . BASE_URL . 'category/' . $category['category'] . '/>' . $category['category'] . '</a>' ; ?>
                 </li>
             <?php endforeach; ?>
         </ul>
