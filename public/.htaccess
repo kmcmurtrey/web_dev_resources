@@ -1,7 +1,7 @@
 RewriteEngine On
 RewriteBase /
 #index.php rewrite
-
+RewriteRule ^/$ index.php
 #new.php Rewrite
 RewriteRule ^new/$ new.php
 #category Rewrite
