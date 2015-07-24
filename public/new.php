@@ -12,7 +12,7 @@ if (!isset($_POST['save_website'])) {
 if (isset($_POST['save_website'])) {
     $website_list = new \WebDevResources\WebsiteData();
     if ($website_list->addWebsite($_POST)) {
-        header('Location: index.php');
+        header('Location: /index.php');
         exit;
     } else {
         echo 'An error occurred when saving the website.';

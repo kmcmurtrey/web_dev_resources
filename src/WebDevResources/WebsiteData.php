@@ -1,6 +1,6 @@
 <?php
 namespace WebDevResources;
-define("BASE_URL","/web_dev_resources/public/");
+define("BASE_URL","");
 define("ROOT_PATH",$_SERVER["DOCUMENT_ROOT"] . "/web_dev_resources/public");
 
 class WebsiteData
@@ -17,7 +17,7 @@ class WebsiteData
             //XAMPP MySQL [username = 'root', password = '']
             //Homestead MySQL [username = 'homestead', password = 'secret']
             //ScotchBox [username = 'root', password = 'root']
-            $this->dbh = new \PDO('mysql:host=localhost;dbname=php_project', 'root', '');
+            $this->dbh = new \PDO('mysql:host=localhost;dbname=php_project', 'root', 'root');
         } catch (\PDOException $e) {
             echo $e->getMessage();
             die;

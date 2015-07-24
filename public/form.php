@@ -1,4 +1,4 @@
-<form method="POST" class="well">
+<form method="POST" action="" class="well" >
     <fieldset>
         <div class="form-group col-md-8 col-md-offset-2">
             <label for="title">Title</label>

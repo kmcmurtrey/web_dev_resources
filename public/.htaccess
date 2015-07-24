@@ -1,5 +1,9 @@
 RewriteEngine On
+RewriteBase /
+#index.php rewrite
+
 #new.php Rewrite
-RewriteRule ^new/$ /web_dev_resources/public/new.php
+RewriteRule ^new/$ new.php
 #category Rewrite
-RewriteRule ^category/([A-Za-z0-9-]+)/$ /web_dev_resources/public/index.php?category=$1
+RewriteRule ^category/([A-Za-z0-9-]+)/$ index.php?category=$1
+#edit.php rewrite
