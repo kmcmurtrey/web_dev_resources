@@ -2,8 +2,11 @@ RewriteEngine On
 RewriteBase /
 #index.php rewrite
 RewriteRule ^/$ index.php
-#new.php Rewrite
-RewriteRule ^new/$ new.php
+#sorting rewrite
+
 #category Rewrite
 RewriteRule ^category/([A-Za-z0-9-]+)/$ index.php?category=$1
+#new.php Rewrite
+RewriteRule ^new/$ new.php
 #edit.php rewrite
+RewriteRule ^edit/([0-9]+)/$ edit.php?id=$1
