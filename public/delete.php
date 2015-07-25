@@ -17,7 +17,7 @@ if ($website === false) {
 }
 
 if ($website_list->deleteWebsite($_GET['id'])) {
-    header('Location: index.php');
+    header('Location: /');
     exit;
 } else {
     echo "Failed to delete website.";
