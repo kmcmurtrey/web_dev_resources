@@ -52,14 +52,11 @@ class Paginator extends WebsiteData
     }
 
     public function getPageUrl($page) {
-        echo '"index.php?pg=' . $page;
-        if (isset($_GET['category'])) {
-            echo '&category=' . $_GET['category'] . '"';
-        }
         if (isset($_GET['sort'])) {
-            echo '&sort=' . $_GET['sort'] . '"';
-        } else {
-            echo '"';
+            echo '/sort/' . $_GET['sort'];
+        } if (isset($_GET['category'])) {
+            echo '/category/' . $_GET['category'];
         }
+        echo '/' . $page . '/';
     }
 }
