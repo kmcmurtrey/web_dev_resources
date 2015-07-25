@@ -2,10 +2,12 @@ RewriteEngine On
 RewriteBase /
 #index.php rewrite
 RewriteRule ^/$ index.php
-#sorting rewrite
-
+#sorting with no category rewrite
+RewriteRule ^sort/([A-Za-z]+)/$ index.php?sort=$1
+#sorting with category rewrite
+RewriteRule ^sort/([A-Za-z]+)/category/([A-Za-z]+)/$ index.php?sort=$1&category=$2
 #category Rewrite
-RewriteRule ^category/([A-Za-z0-9-]+)/$ index.php?category=$1
+RewriteRule ^category/([A-Za-z]+)/$ index.php?category=$1
 #new.php Rewrite
 RewriteRule ^new/$ new.php
 #edit.php rewrite

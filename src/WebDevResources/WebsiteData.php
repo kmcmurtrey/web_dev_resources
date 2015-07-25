@@ -158,11 +158,11 @@ class WebsiteData
     }
 
     public function getSortUrl($sortType) {
-        echo '"index.php?sort=' . $sortType;
+        echo '/sort/' . $sortType;
         if (isset($_GET['category'])) {
-            echo '&category=' . $_GET['category'] . '"';
+            echo '/category/' . $_GET['category'] . '/';
         } else {
-            echo '"';
+            echo '/';
         }
     }
 
