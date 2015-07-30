@@ -43,11 +43,11 @@ class Votes
     }
 
     public function getVoteUrl($id, $currentPage) {
-        echo '"index.php?id=' . $id . '&pg=' . $currentPage;
-        if (isset($_GET['category'])) {
-            echo '&category=' . $_GET['category'] . '"';
-        } else {
-            echo '"';
+        if (isset($_GET['sort'])) {
+            echo '/sort/' . $_GET['sort'];
+        } if (isset($_GET['category'])) {
+            echo '/category/' . $_GET['category'];
         }
+        echo '/website' . $id . '/pg' . $currentPage . '/';
     }
 }
