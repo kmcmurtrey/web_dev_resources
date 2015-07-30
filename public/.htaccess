@@ -7,7 +7,10 @@ RewriteRule ^sort/([A-Za-z]+)/$ index.php?sort=$1
 #sorting with category rewrite
 RewriteRule ^sort/([A-Za-z]+)/category/([A-Za-z]+)/$ index.php?sort=$1&category=$2
 #page number Rewrite
-RewriteRule ^([0-9]+)/$ index.php?page=?1
+RewriteRule ^pg([0-9]+)/$ index.php?pg=$1
+RewriteRule ^category/([A-Za-z]+)/pg([0-9]+)/$ index.php?category=$1&pg=$2
+RewriteRule ^sort/([A-Za-z]+)/pg([0-9]+)/$ index.php?sort=$1&pg=$2
+RewriteRule ^sort/([A-Za-z]+)/category/([A-Za-z]+)/pg([0-9]+)/$ index.php?sort=$1&category=$2&pg=$3
 
 #page number Rewrite with possible sort and category vars
 

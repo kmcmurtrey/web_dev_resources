@@ -57,6 +57,6 @@ class Paginator extends WebsiteData
         } if (isset($_GET['category'])) {
             echo '/category/' . $_GET['category'];
         }
-        echo '/' . $page . '/';
+        echo '/pg' . $page . '/';
     }
 }
