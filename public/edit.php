@@ -12,7 +12,7 @@ if (!isset($_GET['id'])) {
 if (isset($_POST['save_website'])) {
     $website_list = new \WebDevResources\WebsiteData();
     if ($website_list->updateWebsite($_POST)) {
-        header('Location: /index.php');
+        header('Location: /');
         exit;
     } else {
         echo 'An error occurred when saving the website.';
