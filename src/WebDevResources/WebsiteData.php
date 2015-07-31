@@ -7,6 +7,7 @@ class WebsiteData
 {
     protected $dbh;
 
+    //On creation of object, create connection to database.
     public function __construct() {
         $this->connect();
     }
@@ -24,6 +25,7 @@ class WebsiteData
         }
     }
 
+    //Get either all website data for display, or all websites of a certain category.
     public function getWebsites()
     {
         if (!isset($_GET['category'])) {
@@ -52,12 +54,12 @@ class WebsiteData
         }
     }
 
+    //Get total number of websites to display.
     public function getWebsitesCount() {
         return count($this->getWebsites());
     }
 
-
-
+    //Get list of categories from database.
     public function getAllCategories()
     {
         try {
@@ -70,6 +72,7 @@ class WebsiteData
         }
     }
 
+    //Add website data to database.
     public function addWebsite($post_data) {
         //Insert new website data into websites table
         try {
@@ -97,10 +100,9 @@ class WebsiteData
             echo $e->getMessage();
             die();
         }
-
-
     }
 
+    //Get website data based on it's ID for editing or deleting.
     public function getWebsiteById($id) {
         try {
             $query = $this->dbh->prepare("SELECT * FROM websites WHERE id = :id");
@@ -116,6 +118,7 @@ class WebsiteData
         }
     }
 
+    //Update website data after editing.
     public function updateWebsite($post_data) {
         try {
             $query = $this->dbh->prepare("UPDATE websites SET url = :url, title = :title, description = :description, category = :category WHERE id = :id");
@@ -135,6 +138,7 @@ class WebsiteData
         }
     }
 
+    //Delete website data from database.
     public function deleteWebsite($id) {
         try {
             $query = $this->dbh->prepare("DELETE FROM websites WHERE id = :id");
@@ -157,6 +161,7 @@ class WebsiteData
         }
     }
 
+    //Get URLs for website sorting dropdown.
     public function getSortUrl($sortType) {
         echo '/sort/' . $sortType;
         if (isset($_GET['category'])) {
@@ -166,6 +171,7 @@ class WebsiteData
         }
     }
 
+    //Check whether one of the sort items was selected, then run a new SQL query to sort the websites based on the selection.
     public function checkForSort() {
         if (isset($_GET['sort'])) {
             $this->sortVote();
