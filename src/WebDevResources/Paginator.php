@@ -16,7 +16,7 @@ class Paginator extends WebsiteData
             $this->currentPage = $_GET['pg'];
         }
         $this->totalWebsites = $this->getWebsitesCount();
-        $this->websitesPerPage = 4;
+        $this->websitesPerPage = 5;
         $this->totalPages = ceil($this->totalWebsites / $this->websitesPerPage);
     }
 
