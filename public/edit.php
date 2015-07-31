@@ -2,13 +2,13 @@
 
 require '../vendor/autoload.php';
 
-//if the id wasn't passed, display error
+//If the id wasn't passed, display error.
 if (!isset($_GET['id'])) {
-    echo 'You did not pass in an ID.';
+    echo 'You did not pass in a valid ID.';
     exit;
 }
 
-//if the form was submitted (after editing), prepare query to update database row
+//Check if the form was submitted, and call the updateWebsite method.
 if (isset($_POST['save_website'])) {
     $website_list = new \WebDevResources\WebsiteData();
     if ($website_list->updateWebsite($_POST)) {
@@ -20,7 +20,7 @@ if (isset($_POST['save_website'])) {
     }
 }
 
-//Populate form fields with website data based on $_GET['id']
+//Retrieve the website data for the to-be-edited website, which will then be populated in the form fields.
 $website_list = new \WebDevResources\WebsiteData();
 $website = $website_list->getWebsiteById($_GET['id']);
 $categories = $website_list->getAllCategories();
@@ -30,5 +30,6 @@ if ($website === false) {
     exit;
 }
 
+//Render the page for editing websites, passing through the $website and $categories data for the form.
 $template = new \WebDevResources\Template('../views/base.phtml');
 $template->render('../views/index/edit.phtml', ['website' => $website, 'categories' => $categories]);
