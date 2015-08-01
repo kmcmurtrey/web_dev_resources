@@ -9,14 +9,14 @@ $website_list = new \WebDevResources\WebsiteData();
 $p = new \WebDevResources\Paginator();
 $votes = new \WebDevResources\Votes();
 
+//Checks for website Id's. If present, the vote count is increased.
+$votes->checkForId();
+
 //Method calls to get the starting and ending websites to display in the current view, list of websites that will be displayed, and the category list.
 $start = $p->getStart();
 $end = $p->getEnd();
 $websites = $p->getWebsitesSubset($start, $end);
 $categories = $website_list->getAllCategories();
-
-//Checks for website Id's. If present, the vote count is increased.
-$votes->checkForId();
 
 //Instantiates Template class which renders the different views.
 $template = new \WebDevResources\Template('../views/base.phtml');
