@@ -6,18 +6,14 @@ This is my project for Code Louisville's back-end PHP web development course. It
 Cloning this repo and previewing the website should be pretty straightforward with Vagrant and Composer:
 <ol>
   <li>Fork the repo or just clone it to your local machine.</li>
-  <li>CD into the directory of the repo and run:
+  <li>CD into the directory of the repo and run:</li>
 
+  ```vagrant up
   ```
-  vagrant up
-  ```
-  The included Vagrant file uses <a href="box.scotch.io">Scotch Box</a>.</li>
-  <li>
+  <li>The included Vagrant file uses <a href="box.scotch.io">Scotch Box</a>.</li>
 
+  ```composer install
   ```
-  composer install
-  ```
-  </li>
   <li>Preview the site in your browser at 192.168.33.10. </li>
 </ol>
 
